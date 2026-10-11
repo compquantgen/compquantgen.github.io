@@ -1,0 +1,69 @@
+# Selected publications, newest first. This is a short, curated list;
+# the full record lives on Google Scholar and ORCID (linked on the page).
+# Lab members are shown in bold automatically (names come from people.yml).
+# Use "…" in an author list to skip names.
+
+papers:
+  - title: Genomic Dimensionality Bounds Mixed-Model Association Power, Fine-Mapping Resolution, and Genomic Prediction Reliability
+    authors: Jicai Jiang
+    venue: bioRxiv
+    year: 2026
+    doi: 10.64898/2026.06.02.729628
+    preprint: true
+  - title: Widely used GWAS methods can be poorly suited to SNP-level localization under diffuse polygenic architecture in livestock
+    authors: Xuesong Wang, Junjian Wang, Francesco Tiezzi, Yijian Huang, Wen Huang, Christian Maltecca, Jicai Jiang
+    venue: bioRxiv
+    year: 2026
+    doi: 10.64898/2026.07.20.739621
+    preprint: true
+  - title: Pangenome-based structural variant imputation enables large-scale genotype-phenotype studies in dairy cattle
+    authors: Liu Yang, Junjian Wang, Kristen Kuhn, Wenli Li, Geoffrey Zanton, Mahesh Neupane, Clarissa Boschiero, John B. Cole, Bingjie Li, Congjun Li, …, Jicai Jiang, …, George E. Liu
+    venue: Nature Communications
+    year: 2026
+    doi: 10.1038/s41467-026-75219-x
+  - title: 'Fine-mapping methods for complex traits: essential adaptations for samples of related individuals'
+    authors: Junjian Wang, Francesco Tiezzi, Yijian Huang, Garrett See, Clint Schwab, Julong Wei, Christian Maltecca, Jicai Jiang
+    venue: Briefings in Bioinformatics
+    year: 2025
+    doi: 10.1093/bib/bbaf614
+  - title: Genome-wide association study and fine-mapping using imputed sequences to prioritize candidate genes for 30 complex traits in 50,309 Holstein bulls
+    authors: Junjian Wang, Yahui Gao, Sajjad Toghiani, John B. Cole, Christian Maltecca, Li Ma, Jicai Jiang
+    venue: Journal of Dairy Science
+    year: 2025
+    doi: 10.3168/jds.2025-27058
+  - title: Genomic partition of inbreeding depression in production traits of US Jersey cattle using functional annotations
+    authors: Chang Xu, Christian Maltecca, Francesco Tiezzi, John B. Cole, Sajjad Toghiani, Li Ma, Jicai Jiang
+    venue: Journal of Dairy Science
+    year: 2025
+    doi: 10.3168/jds.2025-26738
+  - title: Benchmarking of feed-forward neural network models for genomic prediction of quantitative traits in pigs
+    authors: Junjian Wang, Francesco Tiezzi, Yijian Huang, Christian Maltecca, Jicai Jiang
+    venue: Frontiers in Genetics
+    year: 2025
+    doi: 10.3389/fgene.2025.1618891
+  - title: 'Cross-species functional variant classification using the Evo 2 genomic language model: implications for farm animal genetics and breeding'
+    authors: Jicai Jiang, Francesco Tiezzi, Christian Maltecca
+    venue: Research Square
+    year: 2025
+    doi: 10.21203/rs.3.rs-7579108/v1
+    preprint: true
+  - title: 'MPH: fast REML for large-scale genome partitioning of quantitative genetic variation'
+    authors: Jicai Jiang
+    venue: Bioinformatics
+    year: 2024
+    doi: 10.1093/bioinformatics/btae298
+  - title: 'SLEMM: million-scale genomic predictions with window-based SNP weighting'
+    authors: Jian Cheng, Christian Maltecca, Paul M. VanRaden, Jeffrey R. O'Connell, Li Ma, Jicai Jiang
+    venue: Bioinformatics
+    year: 2023
+    doi: 10.1093/bioinformatics/btad127
+  - title: Functional annotation and Bayesian fine-mapping reveals candidate genes for important agronomic traits in Holstein bulls
+    authors: Jicai Jiang, John B. Cole, Ellen Freebern, Yang Da, Paul M. VanRaden, Li Ma
+    venue: Communications Biology
+    year: 2019
+    doi: 10.1038/s42003-019-0454-y
+  - title: A Large-Scale Genome-Wide Association Study in U.S. Holstein Cattle
+    authors: Jicai Jiang, Li Ma, Dzianis Prakapenka, Paul M. VanRaden, John B. Cole, Yang Da
+    venue: Frontiers in Genetics
+    year: 2019
+    doi: 10.3389/fgene.2019.00412

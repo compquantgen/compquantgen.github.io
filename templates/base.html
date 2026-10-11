@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ site.name }}{% endblock %}</title>
+  <meta name="description" content="{{ site.tagline }}. {{ site.department }}, {{ site.institution }}.">
+  <meta property="og:title" content="{{ site.name }}">
+  <meta property="og:description" content="{{ site.tagline }}">
+  <meta property="og:url" content="{{ site.url }}">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="page-{{ page }}">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html" aria-label="{{ site.name }}, home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="2.00" y="2.00" width="4.25" height="4.25" rx="0.77" opacity="1.00"/><rect x="7.25" y="2.00" width="4.25" height="4.25" rx="0.77" opacity="0.35"/><rect x="12.50" y="2.00" width="4.25" height="4.25" rx="0.77" opacity="0.17"/><rect x="17.75" y="2.00" width="4.25" height="4.25" rx="0.77" opacity="0.26"/><rect x="2.00" y="7.25" width="4.25" height="4.25" rx="0.77" opacity="0.35"/><rect x="7.25" y="7.25" width="4.25" height="4.25" rx="0.77" opacity="1.00"/><rect x="12.50" y="7.25" width="4.25" height="4.25" rx="0.77" opacity="0.22"/><rect x="17.75" y="7.25" width="4.25" height="4.25" rx="0.77" opacity="0.12"/><rect x="2.00" y="12.50" width="4.25" height="4.25" rx="0.77" opacity="0.17"/><rect x="7.25" y="12.50" width="4.25" height="4.25" rx="0.77" opacity="0.22"/><rect x="12.50" y="12.50" width="4.25" height="4.25" rx="0.77" opacity="1.00"/><rect x="17.75" y="12.50" width="4.25" height="4.25" rx="0.77" opacity="0.44"/><rect x="2.00" y="17.75" width="4.25" height="4.25" rx="0.77" opacity="0.26"/><rect x="7.25" y="17.75" width="4.25" height="4.25" rx="0.77" opacity="0.12"/><rect x="12.50" y="17.75" width="4.25" height="4.25" rx="0.77" opacity="0.44"/><rect x="17.75" y="17.75" width="4.25" height="4.25" rx="0.77" opacity="1.00"/></svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Computational Quantitative Genetics</span>
+          <span class="brand-sub">{{ site.institution }}</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        {% for href, label, key in [("index.html","Home","home"),("research.html","Research","research"),("software.html","Software","software"),("publications.html","Publications","publications"),("people.html","People","people")] %}
+        <a href="{{ href }}"{% if page == key %} aria-current="page"{% endif %}>{{ label }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {% block main %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-name">{{ site.name }}</p>
+        <p>{{ site.department }}, {{ site.institution }}<br>
+        {% for line in site.address %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="mailto:{{ site.contact_email }}">Email</a></li>
+        <li><a href="{{ site.links.pi_github }}">GitHub</a></li>
+        <li><a href="{{ site.links.orcid }}">ORCID</a></li>
+        <li><a href="{{ site.links.scholar }}">Google Scholar</a></li>
+      </ul>
+      <p class="footer-meta">Last updated {{ built }}.</p>
+    </div>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

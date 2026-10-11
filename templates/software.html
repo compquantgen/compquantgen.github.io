@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% from "_macros.html" import arrow %}
+{% block title %}Software · {{ site.name }}{% endblock %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>Software</h1>
+    <p class="lede">{{ software.intro }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="tool-grid">
+      {% for s in software.tools %}
+      <article class="tool-card" id="{{ s.id }}">
+        <header>
+          <h2 class="mono">{{ s.name }}</h2>
+          <p class="tool-full">{{ s.full_name }}</p>
+        </header>
+        <p>{{ s.summary }}</p>
+        <p class="tool-meta">
+          {% if s.language %}<span>{{ s.language }}</span>{% endif %}
+          {% if s.since %}<span>Since {{ s.since }}</span>{% endif %}
+        </p>
+        <p class="tool-links">
+          <a href="{{ s.repo }}">GitHub</a>
+          {% if s.docs %}<a href="{{ s.docs }}">Docs</a>{% endif %}
+          {% for p in s.paper_items %}<a href="{{ p.url }}">Paper{% if s.paper_items|length > 1 %} {{ p.year }}{% endif %}</a>{% endfor %}
+        </p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if software.research_code %}
+<section class="section section-tint">
+  <div class="wrap">
+    <h2 class="section-title">Code accompanying papers</h2>
+    <ul class="code-list">
+      {% for c in software.research_code %}
+      <li><a class="mono" href="{{ c.repo }}">{{ c.name }}</a><span>{{ c.summary }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,92 @@
+# Research themes. Order here is the order on the site.
+# `papers` are DOIs; titles and authors are filled in from the publication list.
+# `motif` picks the small illustration: matrix, locus, bounds, sequence.
+
+intro: >-
+  Our work is organized around one question: how to extract reliable genetic
+  conclusions from very large samples of related individuals.
+
+themes:
+  - id: mixed-models
+    title: Mixed models at scale
+    motif: matrix
+    summary: >-
+      Association and genomic prediction for millions of genotyped animals,
+      and variance component estimation for hundreds of thousands.
+    body:
+      - >-
+        Linear mixed models are the workhorse of quantitative genetics. We
+        develop stochastic solvers that make mixed-model GWAS and genomic
+        prediction practical for millions of genotyped animals, and REML
+        estimation practical for hundreds of thousands.
+      - >-
+        The same machinery supports partitioning heritability across genomic
+        annotations, which connects variance components to biology.
+    software: [slemm, mph]
+    papers:
+      - 10.1093/bioinformatics/btad127
+      - 10.1093/bioinformatics/btae298
+
+  - id: fine-mapping
+    title: Fine-mapping in related populations
+    motif: locus
+    summary: >-
+      From association signals to candidate causal variants, and to the
+      functional annotations enriched for genetic effects.
+    body:
+      - >-
+        Most fine-mapping methods assume unrelated samples, and their
+        assumptions fail quietly in livestock data. We develop Bayesian
+        fine-mapping methods for related samples, correct linkage-disequilibrium
+        estimates for relatedness so that summary-statistic tools can be used,
+        and apply these methods to sequence-imputed data on tens of thousands
+        of animals.
+      - >-
+        Integrating functional genomic annotations helps prioritize variants
+        and genes, and shows which kinds of genomic regions are enriched for
+        genetic effects on complex traits.
+    software: [bfmap, ld_adjuster, gemrich]
+    papers:
+      - 10.1093/bib/bbaf614
+      - 10.1038/s42003-019-0454-y
+      - 10.3168/jds.2025-27058
+
+  - id: theory
+    title: Theoretical limits of genomic analysis
+    motif: bounds
+    summary: >-
+      What genomic analyses can and cannot resolve, and why.
+    body:
+      - >-
+        GWAS power, fine-mapping resolution, and genomic prediction
+        reliability are usually studied separately. We show that all three are
+        bounded by the effective dimensionality of the genome, which in turn
+        depends on effective population size. This gives a common explanation
+        for why some analyses succeed in humans and struggle in livestock, and
+        the reverse.
+      - >-
+        We pair this theory with benchmarks that test how widely used
+        methods behave under realistic genetic architectures.
+    papers:
+      - 10.64898/2026.06.02.729628
+      - 10.64898/2026.07.20.739621
+
+  - id: ai
+    title: AI-assisted quantitative genetics and breeding
+    motif: sequence
+    summary: >-
+      Using modern AI models to improve genetic analysis, breeding, and
+      herd management.
+    body:
+      - >-
+        We use AI where it adds something that classical models lack: genomic
+        language models to predict variant effects across species, neural
+        networks benchmarked against standard genomic prediction, and AI
+        assistance for running mixed-model analyses.
+      - >-
+        DairyDelphi, an ongoing project, applies generative sequence models to
+        the life histories of dairy cows recorded on farms, to forecast health,
+        production, and fertility for breeding and management decisions.
+    papers:
+      - 10.21203/rs.3.rs-7579108/v1
+      - 10.3389/fgene.2025.1618891

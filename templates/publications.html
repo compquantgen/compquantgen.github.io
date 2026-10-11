@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% from "_macros.html" import paper, arrow %}
+{% block title %}Publications · {{ site.name }}{% endblock %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>Selected publications</h1>
+    <p class="lede">A short selection of recent and representative work. Current and former lab members are shown in bold.</p>
+    <p class="inline-links">
+      <a href="{{ site.links.scholar }}">Full list on Google Scholar {{ arrow() }}</a>
+      <a href="{{ site.links.orcid }}">ORCID {{ arrow() }}</a>
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <ol class="pub-list">
+      {% for p in pubs %}
+      <li>{{ paper(p) }}</li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endblock %}

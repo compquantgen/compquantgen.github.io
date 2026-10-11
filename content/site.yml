@@ -1,0 +1,37 @@
+# Site-wide settings. Edit freely; run `python build.py` to preview.
+
+name: Computational Quantitative Genetics Lab
+short_name: CompQuantGen
+tagline: Statistical theory, methods, and software for genomic analysis in large, related populations
+url: https://compquantgen.github.io
+
+institution: NC State University
+department: Department of Animal Science
+address:
+  - Campus Box 7621
+  - Raleigh, NC 27695, USA
+
+# Short paragraph on the home page.
+about: >-
+  Livestock populations are large, deeply pedigreed, and highly related as a
+  whole. That structure breaks many methods built for samples of unrelated
+  people. We develop statistical theory, methods, and software for genomic
+  analysis in such populations: mixed-model association and prediction for
+  millions of animals, fine-mapping in related samples, and theory for what
+  genomic analyses can and cannot resolve. Our tools are used in both
+  animal and human genetics.
+
+join: >-
+  We welcome inquiries from prospective graduate students, postdoctoral
+  researchers, and visiting scholars with backgrounds in quantitative or
+  statistical genetics, statistics, or data science. Please write with a CV
+  and a short description of your background and interests.
+
+contact_email: jjiang26@ncsu.edu
+
+links:
+  lab_github: https://github.com/compquantgen
+  pi_github: https://github.com/jiang18
+  orcid: https://orcid.org/0000-0001-6890-7539
+  scholar: https://scholar.google.com/citations?user=xgiKYUwAAAAJ
+  faculty_page: https://cals.ncsu.edu/animal-science/people/jicai-jiang/

@@ -1,0 +1,78 @@
+# Software. `tools` are the lab's main packages; `research_code` are
+# smaller repositories that accompany papers.
+
+intro: >-
+  Our methods are implemented in software built for large data sets and for
+  samples of related individuals.
+
+tools:
+  - id: slemm
+    name: SLEMM
+    full_name: Stochastic-Lanczos-Expedited Mixed Models
+    since: 2021
+    language: C++
+    repo: https://github.com/jiang18/slemm
+    summary: >-
+      Mixed-model GWAS and genomic prediction for millions of genotyped
+      individuals, with window-based SNP weighting.
+    papers: [10.1093/bioinformatics/btad127]
+
+  - id: mph
+    name: MPH
+    full_name: MINQUE for Partitioning Heritability
+    since: 2021
+    language: C++
+    repo: https://github.com/jiang18/mph
+    docs: https://jiang18.github.io/mph/
+    summary: >-
+      Fast REML estimation of genetic variance and covariance components,
+      including heritability partitioning across many genomic annotations.
+    papers: [10.1093/bioinformatics/btae298]
+
+  - id: bfmap
+    name: BFMAP
+    full_name: Bayesian Fine-Mapping and Association for Population and Pedigree Data
+    since: 2019
+    language: C++
+    repo: https://github.com/jiang18/bfmap
+    docs: https://jiang18.github.io/bfmap
+    summary: >-
+      Bayesian fine-mapping designed for highly related populations; used in
+      studies of cattle, pigs, and poultry.
+    papers: [10.1093/bib/bbaf614, 10.1038/s42003-019-0454-y]
+
+  - id: ld_adjuster
+    name: LD Adjuster
+    full_name: LD matrix adjustment for samples of related individuals
+    since: 2025
+    language: C++
+    repo: https://github.com/jiang18/ld_adjuster
+    summary: >-
+      Corrects linkage-disequilibrium matrices for relatedness, so that
+      summary-statistic fine-mapping tools from human genetics can be applied
+      to livestock data.
+    papers: [10.1093/bib/bbaf614]
+
+  - id: gemrich
+    name: gemrich
+    full_name: Genetic Effect Mapping enRICHment (R package)
+    since: 2025
+    language: R
+    repo: https://github.com/jiang18/gemrich
+    summary: >-
+      Estimates how genetic effects are enriched in functional annotations,
+      using fine-mapping summary statistics.
+
+research_code:
+  - name: genomic-bounds
+    repo: https://github.com/jiang18/genomic-bounds
+    summary: How genomic dimensionality bounds GWAS power, fine-mapping resolution, and prediction reliability.
+  - name: FineMapping-RelatedIndividuals
+    repo: https://github.com/JJWang259/FineMapping-RelatedIndividuals
+    summary: "FINEMAP-adj and SuSiE-adj: FINEMAP and SuSiE applied to related samples using relatedness-adjusted LD matrices, effective sample sizes, and mixed-model association statistics. Includes a worked example and gene-level PIPs."
+  - name: sv-association-pipeline
+    repo: https://github.com/JJWang259/sv-association-pipeline
+    summary: Pipeline for large-scale SNP and structural variant association analysis, from GWAS with SLEMM to fine-mapping with BFMAP and functional enrichment.
+  - name: evo2-omia
+    repo: https://github.com/jiang18/evo2-omia
+    summary: Cross-species functional variant classification with the Evo 2 genomic language model.

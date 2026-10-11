@@ -1,0 +1,65 @@
+# People. Names listed here (and their `aliases`) are shown in bold
+# in publication author lists.
+
+pi:
+  name: Jicai Jiang
+  title: Associate Professor, Department of Animal Science
+  aliases: [J. Jiang, J Jiang, JiCai Jiang, Jicaj Jiang]
+  bio: >-
+    Jicai Jiang received his PhD from the University of Maryland in 2018,
+    working with Li Ma, and was a postdoctoral fellow at the University of
+    Maryland School of Medicine with Jeffrey O'Connell. He joined NC State in
+    2019. He serves on the editorial boards of Communications Biology and BMC
+    Genomics.
+  email: jjiang26@ncsu.edu
+
+current:
+  - name: Xuesong Wang
+    role: Postdoc
+    since: 2026
+    focus: GWAS and fine-mapping in livestock
+  - name: Dan Gingerich
+    role: PhD student (Bioinformatics; Statistics co-major)
+    since: 2026
+    focus: Statistical fine-mapping
+
+alumni:
+  - name: Hui Wen
+    role: Postdoc
+    years: 2025–2026
+    focus: Genetic analysis of structural variants in pigs
+    co_advisor: Christian Maltecca
+  - name: Junjian Wang
+    role: PhD 2021–2025, Postdoc 2025–2026
+    years: ""
+    focus: >-
+      PhD: statistical and computational methods for quantitative genetic
+      analyses. Postdoc: rare-variant association in pigs, co-advised with
+      Christian Maltecca and Xihao Li.
+  - name: Chang Xu
+    role: MS
+    years: 2022–2025
+    focus: Inbreeding depression in dairy cattle
+    co_advisor: Christian Maltecca
+  - name: Yuqing He
+    role: Postdoc
+    years: "2022"
+    focus: Genome partitioning using sequence data
+    co_advisor: Christian Maltecca
+  - name: Shauneen O'Neill
+    role: MS
+    years: 2020–2022
+    focus: Non-additive genetic effects in pigs
+  - name: Jian Cheng
+    role: Postdoc
+    years: 2021–2022
+    focus: Large-scale genomic analysis and method development
+
+collaborators:
+  intro: >-
+    We work closely with colleagues at NC State and beyond, and co-advise
+    several students and postdocs with them.
+  groups:
+    - name: Christian Maltecca
+      lab: Livestock Breeding and Genomics Lab, NC State
+      url: ""

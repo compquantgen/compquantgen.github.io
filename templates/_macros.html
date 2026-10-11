@@ -1,0 +1,12 @@
+{% macro paper(p, compact=false) %}
+<article class="paper{% if compact %} paper-compact{% endif %}">
+  <h3 class="paper-title"><a href="{{ p.url }}">{{ p.title|safe }}</a></h3>
+  <p class="paper-authors">{{ p.authors }}</p>
+  <p class="paper-venue">
+    {% if p.kind == "preprint" %}<span class="tag">Preprint</span>{% endif %}
+    <span class="venue">{{ p.journal }}</span>{% if p.journal and p.year %} · {% endif %}{{ p.year or "" }}
+  </p>
+</article>
+{% endmacro %}
+
+{% macro arrow() %}<span class="arrow" aria-hidden="true">→</span>{% endmacro %}

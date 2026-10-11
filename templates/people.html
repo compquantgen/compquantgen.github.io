@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% from "_macros.html" import arrow %}
+{% block title %}People · {{ site.name }}{% endblock %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>People</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">Principal investigator</h2>
+    <article class="pi-card">
+      <div class="pi-initials" aria-hidden="true">JJ</div>
+      <div>
+        <h3>{{ people.pi.name }}</h3>
+        <p class="pi-title">{{ people.pi.title }}, {{ site.institution }}</p>
+        <p>{{ people.pi.bio }}</p>
+        <p class="pi-links">
+          <a href="mailto:{{ people.pi.email }}">Email</a>
+          <a href="{{ site.links.pi_github }}">GitHub</a>
+          <a href="{{ site.links.orcid }}">ORCID</a>
+          <a href="{{ site.links.scholar }}">Google Scholar</a>
+          <a href="{{ site.links.faculty_page }}">Faculty page</a>
+        </p>
+      </div>
+    </article>
+
+    <h2 class="section-title">Current team</h2>
+    <div class="people-grid">
+      {% for p in people.current %}
+      <article class="person">
+        <h3>{{ p.name }}</h3>
+        <p class="person-role">{{ p.role }}{% if p.since %}, since {{ p.since }}{% endif %}</p>
+        <p>{{ p.focus }}</p>
+        {% if p.co_advisor %}<p class="person-note">Co-advised with {{ p.co_advisor }}</p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h2 class="section-title">Former members</h2>
+        <ul class="alumni">
+          {% for p in people.alumni %}
+          <li>
+            <span class="alum-name">{{ p.name }}</span> <span class="alum-role">{{ p.role }} {{ p.years }}</span>
+            <span class="alum-detail">{{ p.focus }}{% if p.co_advisor %} · co-advised with {{ p.co_advisor }}{% endif %}{% if p.now %} · now {{ p.now }}{% endif %}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">Collaborators</h2>
+        <p class="body-text">{{ people.collaborators.intro }}</p>
+        <ul class="collab">
+          {% for g in people.collaborators.groups %}
+          <li>{% if g.url %}<a href="{{ g.url }}">{{ g.name }}</a>{% else %}<span class="alum-name">{{ g.name }}</span>{% endif %} <span class="alum-detail">{{ g.lab }}</span></li>
+          {% endfor %}
+        </ul>
+        <aside class="join-card join-card-sm">
+          <h2>Join us</h2>
+          <p>{{ site.join }}</p>
+          <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

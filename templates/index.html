@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% from "_macros.html" import arrow %}
+{% block main %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">{{ site.department }} · {{ site.institution }}</p>
+      <h1>{{ site.name }}</h1>
+      <p class="lede">{{ site.tagline }}.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="research.html">Our research {{ arrow() }}</a>
+        <a class="btn" href="software.html">Software {{ arrow() }}</a>
+      </div>
+    </div>
+    <figure class="hero-art">
+      {{ hero_svg }}
+      <figcaption>A genomic relationship matrix: every animal is related to many others, mostly weakly.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap about-grid">
+    <div>
+      <h2 class="section-title">About the lab</h2>
+      <p class="about">{{ site.about }}</p>
+      <p class="inline-links"><a href="publications.html">Publications {{ arrow() }}</a> <a href="people.html">People {{ arrow() }}</a></p>
+    </div>
+    <aside class="join-card">
+      <h2>Join us</h2>
+      <p>{{ site.join }}</p>
+      <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <h2 class="section-title">Research themes</h2>
+    <div class="theme-grid">
+      {% for t in research.themes %}
+      <a class="theme-card" href="research.html#{{ t.id }}">
+        <div class="theme-art">{{ t.svg }}</div>
+        <div class="theme-body">
+          <h3>{{ t.title }}</h3>
+          <p>{{ t.summary }}</p>
+          <span class="more">Explore this theme {{ arrow() }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Software</h2>
+      <a href="software.html">All software {{ arrow() }}</a>
+    </div>
+    <div class="tool-strip">
+      {% for s in software.tools %}
+      <a class="tool-chip" href="{{ s.repo }}">
+        <span class="tool-name">{{ s.name }}</span>
+        <span class="tool-desc">{{ s.full_name }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% from "_macros.html" import paper, arrow %}
+{% block title %}Research · {{ site.name }}{% endblock %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>Research</h1>
+    <p class="lede">{{ research.intro }}</p>
+    <nav class="chips" aria-label="Themes">
+      {% for t in research.themes %}<a class="chip" href="#{{ t.id }}">{{ t.title }}</a>{% endfor %}
+    </nav>
+  </div>
+</section>
+
+{% for t in research.themes %}
+<section class="section theme-section{% if loop.index is even %} section-tint{% endif %}" id="{{ t.id }}">
+  <div class="wrap">
+    <div class="theme-head">
+      <div>
+        <p class="eyebrow">Theme {{ loop.index }}</p>
+        <h2>{{ t.title }}</h2>
+        {% for para in t.body %}<p class="body-text">{{ para }}</p>{% endfor %}
+        {% if t.tools %}
+        <p class="tools-line">Software:
+          {% for s in t.tools %}<a href="{{ s.repo }}" class="mono">{{ s.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+        </p>
+        {% endif %}
+      </div>
+      <div class="theme-art theme-art-lg">{{ t.svg }}</div>
+    </div>
+    {% if t.paper_items %}
+    <h3 class="sub-title">Selected papers</h3>
+    <div class="paper-grid">
+      {% for p in t.paper_items %}{{ paper(p, compact=true) }}{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endfor %}
+{% endblock %}
