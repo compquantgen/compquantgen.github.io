@@ -257,6 +257,12 @@ def main():
         trim_blocks=True,
         lstrip_blocks=True,
     )
+    # Date in Eastern time (GitHub's build servers run on UTC).
+    try:
+        from zoneinfo import ZoneInfo
+        today = dt.datetime.now(ZoneInfo("America/New_York")).date()
+    except Exception:
+        today = dt.date.today()
     ctx = dict(
         site=site,
         research=research,
@@ -264,8 +270,8 @@ def main():
         people=people,
         pubs=pubs,
         hero_svg=svg_matrix(n=26, seed=4, size=330, label="Genomic relationship matrix"),
-        built=dt.date.today().strftime("%B %-d, %Y") if sys.platform != "win32" else dt.date.today().strftime("%B %#d, %Y"),
-        year=dt.date.today().year,
+        built=f"{today:%B} {today.day}, {today.year}",
+        year=today.year,
         # Changes whenever style.css changes, so browsers fetch the new file.
         css_v=hashlib.md5((ROOT / "assets" / "style.css").read_bytes()).hexdigest()[:8],
     )
