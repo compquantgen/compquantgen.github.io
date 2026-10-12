@@ -7,6 +7,7 @@ Then open _site/index.html in a browser.
 """
 
 import datetime as dt
+import hashlib
 import html
 import math
 import random
@@ -265,6 +266,8 @@ def main():
         hero_svg=svg_matrix(n=26, seed=4, size=330, label="Genomic relationship matrix"),
         built=dt.date.today().strftime("%B %-d, %Y") if sys.platform != "win32" else dt.date.today().strftime("%B %#d, %Y"),
         year=dt.date.today().year,
+        # Changes whenever style.css changes, so browsers fetch the new file.
+        css_v=hashlib.md5((ROOT / "assets" / "style.css").read_bytes()).hexdigest()[:8],
     )
 
     OUT.mkdir(exist_ok=True)
