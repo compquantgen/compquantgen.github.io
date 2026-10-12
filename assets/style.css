@@ -101,7 +101,7 @@ a:hover .arrow { transform: translateX(3px); }
 .hero { padding: 56px 0 64px; border-bottom: 1px solid var(--line); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 56px; align-items: center; }
 .hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); max-width: 14ch; }
-.hero-pi { margin: 12px 0 0; color: var(--ink-soft); }
+.hero-pi { margin: 12px 0 0; font-size: 1.18rem; color: var(--ink-soft); }
 .hero-pi a { font-weight: 500; text-decoration: none; }
 .hero-pi a:hover { text-decoration: underline; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
