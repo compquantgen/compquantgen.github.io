@@ -43,7 +43,7 @@
     <div class="wrap footer-grid">
       <div>
         <p class="footer-name">{{ site.name }}</p>
-        <p>{{ site.department }}, {{ site.institution }}<br>
+        <p class="footer-addr"><a href="{{ site.links.department }}">{{ site.department }}</a>, <a href="{{ site.links.university }}">{{ site.institution }}</a><br>
         {% for line in site.address %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
       </div>
       <ul class="footer-links">
