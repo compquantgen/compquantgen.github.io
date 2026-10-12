@@ -32,10 +32,9 @@ alumni:
   - name: Junjian Wang
     role: PhD 2021–2025, Postdoc 2025–2026
     years: ""
-    focus: >-
-      PhD: statistical and computational methods for quantitative genetic
-      analyses. Postdoc: rare-variant association in pigs, co-advised with
-      Christian Maltecca and Xihao Li.
+    focus: |-
+      PhD: statistical and computational methods for quantitative genetic analyses
+      Postdoc: rare-variant association in pigs, co-advised with Christian Maltecca and Xihao Li
   - name: Chang Xu
     role: MS
     years: 2022–2025

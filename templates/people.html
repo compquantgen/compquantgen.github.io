@@ -46,7 +46,7 @@
           {% for p in people.alumni %}
           <li>
             <span class="alum-name">{{ p.name }}</span> <span class="alum-role">{{ p.role }} {{ p.years }}</span>
-            <span class="alum-detail">{{ p.focus }}{% if p.co_advisor %} · co-advised with {{ p.co_advisor }}{% endif %}{% if p.now %} · now {{ p.now }}{% endif %}</span>
+            <span class="alum-detail">{% for line in p.focus.split("\n") %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}{% if p.co_advisor %} · co-advised with {{ p.co_advisor }}{% endif %}{% if p.now %} · now {{ p.now }}{% endif %}</span>
           </li>
           {% endfor %}
         </ul>
