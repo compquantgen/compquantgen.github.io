@@ -3,6 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if site.ga_id %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga_id }}');
+  </script>
+  {% endif %}
   <title>{% block title %}{{ site.name }}{% endblock %}</title>
   <meta name="description" content="{{ site.tagline }}. {{ site.department }}, {{ site.institution }}.">
   <meta property="og:title" content="{{ site.name }}">

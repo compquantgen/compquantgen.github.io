@@ -5,6 +5,9 @@ short_name: CompQuantGen
 tagline: Statistical theory, methods, and software for genomic analysis in large, related populations
 url: https://compquantgen.github.io
 
+# Google Analytics 4 Measurement ID. Delete or leave blank to turn tracking off.
+ga_id: G-FF2EGT120H
+
 institution: NC State University
 department: Department of Animal Science
 address:
