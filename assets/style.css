@@ -185,8 +185,9 @@ a:hover .arrow { transform: translateX(3px); }
 .tool-full { color: var(--ink-faint); font-size: .92rem; }
 .tool-card > p { color: var(--ink-soft); }
 .tool-meta { display: flex; gap: 14px; font-size: .85rem; color: var(--ink-faint) !important; margin-top: auto; }
-.tool-links { display: flex; gap: 6px 18px; flex-wrap: wrap; margin: 0; font-weight: 500; }
+.tool-links { display: flex; gap: 6px 0; flex-wrap: wrap; margin: 0; font-weight: 500; }
 .tool-links a { text-decoration: none; }
+.tool-links a + a::before { content: "·"; display: inline-block; margin: 0 10px; color: var(--ink-faint); font-weight: 400; }
 .code-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
 .code-list li { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .code-list li span { color: var(--ink-soft); }
