@@ -198,8 +198,10 @@ a:hover .arrow { transform: translateX(3px); }
 @media (max-width: 760px) { .tool-grid { grid-template-columns: 1fr; } .code-list li { grid-template-columns: 1fr; gap: 2px; } }
 
 /* People */
-.pi-card { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; margin-bottom: 56px; max-width: 860px; }
+.pi-card { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; margin-bottom: 56px; max-width: 860px; }
 .pi-initials { width: 96px; height: 96px; border-radius: 50%; background: var(--bg-tint); border: 1px solid var(--line); display: grid; place-items: center; font-family: var(--serif); font-size: 2rem; color: var(--accent); }
+.pi-photo { width: 120px; height: 120px; border-radius: 14px; object-fit: cover; border: 1px solid var(--line); }
+.person-photo { width: 64px; height: 64px; border-radius: 10px; object-fit: cover; border: 1px solid var(--line); margin-bottom: 12px; }
 .pi-card h3 { font-size: 1.5rem; margin-bottom: .15em; }
 .pi-title { color: var(--ink-faint); }
 .pi-card p { color: var(--ink-soft); }
@@ -218,7 +220,7 @@ a:hover .arrow { transform: translateX(3px); }
 .alum-role { color: var(--accent); font-size: .9rem; margin-left: 4px; }
 .alum-detail { display: block; color: var(--ink-soft); font-size: .92rem; }
 @media (max-width: 860px) { .two-col { grid-template-columns: 1fr; gap: 40px; } }
-@media (max-width: 520px) { .pi-card { grid-template-columns: 1fr; padding: 22px; } .pi-initials { width: 72px; height: 72px; font-size: 1.5rem; } }
+@media (max-width: 520px) { .pi-card { grid-template-columns: 1fr; padding: 22px; } .pi-initials { width: 72px; height: 72px; font-size: 1.5rem; } .pi-photo { width: 96px; height: 96px; border-radius: 12px; } }
 
 /* Footer */
 .site-footer { border-top: 1px solid var(--line); padding: 40px 0 48px; font-size: .9rem; color: var(--ink-soft); background: var(--bg); }

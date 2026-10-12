@@ -12,7 +12,7 @@
   <div class="wrap">
     <h2 class="section-title">Principal investigator</h2>
     <article class="pi-card">
-      <div class="pi-initials" aria-hidden="true">JJ</div>
+      {% if people.pi.photo %}<img class="pi-photo" src="{{ people.pi.photo }}" alt="{{ people.pi.name }}" width="120" height="120">{% else %}<div class="pi-initials" aria-hidden="true">JJ</div>{% endif %}
       <div>
         <h3>{{ people.pi.name }}</h3>
         <p class="pi-title">{{ people.pi.title }}, {{ site.institution }}</p>
@@ -31,6 +31,7 @@
     <div class="people-grid">
       {% for p in people.current %}
       <article class="person">
+        {% if p.photo %}<img class="person-photo" src="{{ p.photo }}" alt="{{ p.name }}" width="64" height="64" loading="lazy">{% endif %}
         <h3>{{ p.name }}</h3>
         <p class="person-role">{{ p.role }}{% if p.since %}, since {{ p.since }}{% endif %}</p>
         <p>{{ p.focus }}</p>

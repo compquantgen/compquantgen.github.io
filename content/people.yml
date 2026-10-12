@@ -1,5 +1,7 @@
 # People. Names listed here (and their `aliases`) are shown in bold
 # in publication author lists.
+# Optional `photo:` for anyone: a square image in assets/people/
+# (replaces the initials for the PI; shown on the card for members).
 
 pi:
   name: Jicai Jiang
@@ -12,6 +14,7 @@ pi:
     2019. He serves on the editorial boards of Communications Biology and BMC
     Genomics.
   email: jjiang26@ncsu.edu
+  photo: assets/people/jicai-jiang.jpg
 
 current:
   - name: Xuesong Wang
