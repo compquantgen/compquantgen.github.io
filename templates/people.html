@@ -57,7 +57,7 @@
         <p class="body-text">{{ people.collaborators.intro }}</p>
         <ul class="collab">
           {% for g in people.collaborators.groups %}
-          <li>{% if g.url %}<a href="{{ g.url }}">{{ g.name }}</a>{% else %}<span class="alum-name">{{ g.name }}</span>{% endif %} <span class="alum-detail">{{ g.lab }}</span></li>
+          <li><span class="alum-name">{{ g.name }}</span> {% if g.url %}<a class="alum-detail" href="{{ g.url }}">{{ g.lab }}</a>{% else %}<span class="alum-detail">{{ g.lab }}</span>{% endif %}</li>
           {% endfor %}
         </ul>
         <aside class="join-card join-card-sm">

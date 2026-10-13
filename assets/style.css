@@ -219,6 +219,8 @@ a:hover .arrow { transform: translateX(3px); }
 .alum-name { font-weight: 600; }
 .alum-role { color: var(--accent); font-size: .9rem; margin-left: 4px; }
 .alum-detail { display: block; color: var(--ink-soft); font-size: .92rem; }
+a.alum-detail { color: var(--accent); text-decoration: none; }
+a.alum-detail:hover { text-decoration: underline; }
 @media (max-width: 860px) { .two-col { grid-template-columns: 1fr; gap: 40px; } }
 @media (max-width: 520px) { .pi-card { grid-template-columns: 1fr; padding: 22px; } .pi-initials { width: 72px; height: 72px; font-size: 1.5rem; } .pi-photo { width: 96px; height: 96px; border-radius: 12px; } }
 
