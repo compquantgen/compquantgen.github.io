@@ -23,11 +23,11 @@
           {% if s.language %}<span>{{ s.language }}</span>{% endif %}
           {% if s.since %}<span>Since {{ s.since }}</span>{% endif %}
         </p>
-        <p class="tool-links">
+        <p class="tool-links"><span class="dot-list">
           <a href="{{ s.repo }}">GitHub</a>
           {% if s.docs %}<a href="{{ s.docs }}">Docs</a>{% endif %}
           {% for p in s.paper_items %}<a href="{{ p.url }}">Paper{% if s.paper_items|length > 1 %} {{ p.year }}{% endif %}</a>{% endfor %}
-        </p>
+        </span></p>
       </article>
       {% endfor %}
     </div>
