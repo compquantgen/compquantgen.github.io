@@ -31,7 +31,7 @@
     <div class="people-grid">
       {% for p in people.current %}
       <article class="person">
-        {% if p.photo %}<img class="person-photo" src="{{ p.photo }}" alt="{{ p.name }}" width="64" height="64" loading="lazy">{% endif %}
+        {% if p.photo %}<img class="person-photo" src="{{ p.photo }}" alt="{{ p.name }}" width="64" height="64" loading="lazy">{% else %}{% set parts = p.name.split() %}<div class="person-initials" aria-hidden="true">{{ parts[0][0] }}{{ parts[-1][0] }}</div>{% endif %}
         <h3>{{ p.name }}</h3>
         <p class="person-role">{{ p.role }}{% if p.since %}, since {{ p.since }}{% endif %}</p>
         <p>{{ p.focus }}</p>

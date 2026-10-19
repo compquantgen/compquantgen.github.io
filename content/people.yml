@@ -18,6 +18,7 @@ pi:
 
 current:
   - name: Xuesong Wang
+    photo: assets/people/xuesong-wang.jpg
     role: Postdoc
     since: 2026
     focus: GWAS and fine-mapping in livestock

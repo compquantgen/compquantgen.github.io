@@ -202,6 +202,7 @@ a:hover .arrow { transform: translateX(3px); }
 .pi-initials { width: 96px; height: 96px; border-radius: 50%; background: var(--bg-tint); border: 1px solid var(--line); display: grid; place-items: center; font-family: var(--serif); font-size: 2rem; color: var(--accent); }
 .pi-photo { width: 120px; height: 120px; border-radius: 14px; object-fit: cover; border: 1px solid var(--line); }
 .person-photo { width: 64px; height: 64px; border-radius: 10px; object-fit: cover; border: 1px solid var(--line); margin-bottom: 12px; }
+.person-initials { width: 64px; height: 64px; border-radius: 10px; background: var(--bg-tint); border: 1px solid var(--line); display: grid; place-items: center; font-family: var(--serif); font-size: 1.35rem; color: var(--accent); margin-bottom: 12px; }
 .pi-card h3 { font-size: 1.5rem; margin-bottom: .15em; }
 .pi-title { color: var(--ink-faint); }
 .pi-card p { color: var(--ink-soft); }
