@@ -190,11 +190,11 @@ def svg_bounds(w=320, h=200):
     )
 
 
-def svg_sequence(seed=11, w=320, h=200):
+def svg_sequence(seed=11, w=320, h=200, n=12, hist_n=8):
     """A token sequence feeding a forecast trajectory."""
     rng = random.Random(seed)
     toks = []
-    n, tw = 12, (w - 20) / 12
+    tw = (w - 20) / n
     for i in range(n):
         op = 0.25 + 0.6 * rng.random()
         toks.append(
@@ -205,10 +205,10 @@ def svg_sequence(seed=11, w=320, h=200):
     for i in range(n):
         y = min(0.95, max(0.1, y + rng.uniform(-0.18, 0.2)))
         pts.append((10 + i * tw + (tw - 4) / 2, 18 + (1 - y) * (h - 84)))
-    hist = " ".join(f"{x:.1f},{yy:.1f}" for x, yy in pts[:8])
-    fut = " ".join(f"{x:.1f},{yy:.1f}" for x, yy in pts[7:])
+    hist = " ".join(f"{x:.1f},{yy:.1f}" for x, yy in pts[:hist_n])
+    fut = " ".join(f"{x:.1f},{yy:.1f}" for x, yy in pts[hist_n - 1:])
     nodes = "".join(
-        f'<circle cx="{x:.1f}" cy="{yy:.1f}" r="3.4" fill="{"var(--accent-2)" if i >= 8 else "var(--motif)"}"/>'
+        f'<circle cx="{x:.1f}" cy="{yy:.1f}" r="3.4" fill="{"var(--accent-2)" if i >= hist_n else "var(--motif)"}"/>'
         for i, (x, yy) in enumerate(pts)
     )
     links = "".join(
@@ -224,7 +224,14 @@ def svg_sequence(seed=11, w=320, h=200):
     )
 
 
-MOTIFS = {"matrix": lambda: svg_matrix(n=14, seed=9, size=200), "locus": svg_locus, "bounds": svg_bounds, "sequence": svg_sequence}
+# Each theme: (square version for home-page cards, version for the Research page).
+# The relationship matrix stays square in both places.
+MOTIFS = {
+    "matrix": (lambda: svg_matrix(n=14, seed=9, size=200), lambda: svg_matrix(n=14, seed=9, size=200)),
+    "locus": (lambda: svg_locus(w=200, h=200), lambda: svg_locus(w=320, h=200)),
+    "bounds": (lambda: svg_bounds(w=200, h=200), lambda: svg_bounds(w=320, h=200)),
+    "sequence": (lambda: svg_sequence(w=200, h=200, n=8, hist_n=6), lambda: svg_sequence(w=320, h=200)),
+}
 
 
 # --------------------------------------------------------------------------
@@ -243,7 +250,8 @@ def main():
     by_doi = {p["doi"]: p for p in pubs}
 
     for t in research["themes"]:
-        t["svg"] = MOTIFS[t["motif"]]()
+        square, page = MOTIFS[t["motif"]]
+        t["svg"], t["svg_page"] = square(), page()
         t["paper_items"] = [by_doi[d.lower()] for d in t.get("papers", []) if d.lower() in by_doi]
         t["tools"] = [s for s in software["tools"] if s["id"] in t.get("software", [])]
     for s in software["tools"]:
